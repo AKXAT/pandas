@@ -5,5 +5,5 @@ dataframe = pd.read_csv('Salaries.csv')
 print(dataframe.info())
 #now find the average basepay 
 print(dataframe.columns)
-basepay = dataframe['BasePay'].mean()
-print(basepay)
+basepay = dataframe['BasePay']
+print(f'The Mean is {basepay.mean()}')
