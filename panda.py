@@ -31,3 +31,19 @@ print(dataframe['JobTitle'].nunique())
 #what are teh top 5 most common jobs 
 commonjobs = dataframe['JobTitle'].value_counts().head(5)
 print(commonjobs)
+# JOB title with only one occurance in 2013
+unique_jobtitle = dataframe[dataframe['Year'] == 2013]['JobTitle'].value_counts() == 1
+print(sum(unique_jobtitle))
+# How many people have the word chief in their job title 
+def find_chief(title):
+    if 'chief' in title.lower().split():
+        return True
+    else:
+        return False
+
+chiefs_count = dataframe['JobTitle'].apply(lambda x : find_chief(x))
+print(sum(chiefs_count))
+
+
+
+
