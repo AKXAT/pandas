@@ -5,6 +5,7 @@ import numpy as np
 x = np.linspace(0,5,11)
 y = x**2 
 
+'''
 plt.plot(x,y)
 plt.xlabel('X lable')
 plt.ylabel('Y lable')
@@ -51,4 +52,11 @@ ax.legend()
 plt.tight_layout()
 plt.show()
 
+'''
 
+# Appearnce and colours in the plot 
+fig3 = plt.figure()
+ax3 = fig3.add_axes([0,0,1,1])
+ax3.plot(x,y,color='#ff8c00',linewidth=3,marker='o',markersize=20,
+markerfacecolor='yellow',markeredgewidth=3,markeredgecolor='black')
+plt.show()
