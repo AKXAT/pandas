@@ -27,4 +27,13 @@ sns.swarmplot(x='day',y='total_bill',data=tips)
 # - Let's see about **FACTOR PLOT**, this is general form of all these plots
 sns.catplot(x='day',y='total_bill',data=tips,kind='bar')
 plt.show()
-
+# - Let's First create set up or data input on which we are going to plot the MATRIX PLOTS 
+tips = sns.load_dataset('tips')
+flights = sns.load_dataset('flights')
+tc = tips.corr()
+sns.heatmap(tc,annot=True,cmap='coolwarm')
+fm = flights.pivot_table(index='month',columns='year',values='passengers')
+sns.heatmap(fm,linecolor='white',linewidth='1')
+# - Let's now see how a **CLUISTER MAP** looks like. It's basically cluster of Heat Map
+sns.clustermap(fm)
+plt.show()
