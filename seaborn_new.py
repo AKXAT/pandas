@@ -5,7 +5,7 @@ import numpy as np
 tips = sns.load_dataset('tips')
 flights = sns.load_dataset('flights')
 iris = sns.load_dataset('iris')
-#print(tips.head())
+'''#print(tips.head())
 # - Lets see the first plot type DIST PLOT. Its a way to see a uni-varaible distribution.
 sns.displot(tips['total_bill'],kde='True')
 # - Let's see Joint Plot, here we can combint two DIST plots
@@ -47,4 +47,12 @@ var.map_lower(sns.kdeplot)
 # Facet Grid 
 g = sns.FacetGrid(data=tips,col='time',row='smoker')
 g.map(sns.displot,'total_bill')
+#Style and Color 
+sns.set_style(style='darkgrid') # to set the background
+sns.despine(left=True,bottom=True) # to remove the peaks 
+#plt.figure(figsize=(12,12))
+sns.set_context('poster')
+sns.countplot(x='sex',data=tips)
+'''
+sns.lmplot(x='total_bill',y='tip',data=tips,hue='sex',palette='coolwarm')
 plt.show()
